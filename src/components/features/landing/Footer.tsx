@@ -1,7 +1,7 @@
 import React from 'react';
-import { Send, MessageCircle, Instagram, MapPin } from 'lucide-react';
+import { Send, MessageCircle, Camera, MapPin } from 'lucide-react';
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <footer className="py-20 border-t border-white/5 bg-dark-bg">
       <div className="container mx-auto px-6">
@@ -16,7 +16,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a href="https://www.instagram.com/gigi_style_lashes" target="_blank" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-pink/20 transition-colors group">
-                <Instagram size={18} className="text-white/60 group-hover:text-brand-pink transition-colors" />
+                <Camera size={18} className="text-white/60 group-hover:text-brand-pink transition-colors" />
               </a>
               <a href="https://wa.me/18297748007" target="_blank" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-pink/20 transition-colors group">
                 <MessageCircle size={18} className="text-white/60 group-hover:text-brand-pink transition-colors" />
@@ -56,5 +56,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;

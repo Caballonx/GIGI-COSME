@@ -3,9 +3,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Instagram, MessageCircle } from 'lucide-react';
+import { Camera, MessageCircle } from 'lucide-react';
 
-const CTA = () => {
+export const CTA = () => {
   return (
     <section className="py-24 relative overflow-hidden bg-dark-bg">
       <div className="container mx-auto px-6 relative z-10">
@@ -38,7 +38,7 @@ const CTA = () => {
               className="text-lg px-10 py-8"
               onClick={() => window.open('https://www.instagram.com/gigi_style_lashes', '_blank')}
             >
-              <Instagram className="mr-2" />
+              <Camera className="mr-2" />
               VER INSTAGRAM
             </Button>
           </div>
@@ -50,5 +50,3 @@ const CTA = () => {
     </section>
   );
 };
-
-export default CTA;

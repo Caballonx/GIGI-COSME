@@ -64,40 +64,40 @@ export const Pricing = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className={`p-10 rounded-sm flex flex-col ${
-                plan.highlight 
-                  ? 'bg-white/5 border-2 border-neon-yellow relative scale-105 z-10' 
+              className={`p-10 rounded-sm flex flex-col backdrop-blur-sm ${
+                plan.popular 
+                  ? 'bg-brand-pink/10 border-2 border-brand-pink relative scale-105 z-10' 
                   : 'border border-white/10'
               }`}
             >
-              {plan.highlight && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-neon-yellow text-black text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-full">
-                  Most Popular
+              {plan.popular && (
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-pink text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-full shadow-lg shadow-brand-pink/50">
+                  RECOMENDADO
                 </div>
               )}
               
-              <h3 className="text-3xl font-bebas mb-2">{plan.name}</h3>
+              <h3 className="text-3xl font-bebas mb-2 tracking-wider">{plan.name}</h3>
               <div className="flex items-baseline mb-8">
-                <span className="text-4xl font-bebas text-neon-yellow">
-                  {plan.price !== "Custom" ? `$${plan.price}` : plan.price}
+                <span className="text-3xl font-bebas text-brand-light">
+                  {plan.price}
                 </span>
-                {plan.price !== "Custom" && <span className="text-white/40 ml-2 uppercase text-xs tracking-widest">/ Month</span>}
               </div>
 
               <div className="flex-grow space-y-4 mb-10">
                 {plan.features.map(f => (
                   <div key={f} className="flex items-center space-x-3 text-sm text-white/70 font-poppins">
-                    <Check size={16} className="text-neon-yellow" />
+                    <Check size={16} className="text-brand-pink" />
                     <span>{f}</span>
                   </div>
                 ))}
               </div>
 
               <Button 
-                variant={plan.highlight ? 'primary' : 'outline'} 
-                className="w-full"
+                variant={plan.popular ? 'primary' : 'outline'} 
+                className="w-full font-bebas tracking-widest py-6"
+                onClick={() => window.open('https://wa.me/18297748007', '_blank')}
               >
-                {plan.price === "Custom" ? "Contact Us" : "Get Started"}
+                {plan.buttonText}
               </Button>
             </motion.div>
           ))}

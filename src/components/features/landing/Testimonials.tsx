@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Quote } from 'lucide-react';
@@ -23,7 +25,7 @@ const testimonials = [
   }
 ];
 
-const Testimonials = () => {
+export const Testimonials = () => {
   return (
     <section id="testimonios" className="py-24 bg-white/[0.02]">
       <div className="container mx-auto px-6">
@@ -70,4 +72,3 @@ const Testimonials = () => {
   );
 };
 
-export default Testimonials;
