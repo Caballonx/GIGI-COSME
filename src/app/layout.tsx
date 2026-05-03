@@ -1,18 +1,17 @@
 import type { Metadata, Viewport } from "next";
-import { Poppins, Playfair_Display } from "next/font/google";
+import { Bebas_Neue, Outfit } from "next/font/google";
 import "./globals.css";
 import { PWARegistration } from "@/components/features/landing/PWARegistration";
 
-const poppins = Poppins({
-  variable: "--font-poppins",
+const bebasNeue = Bebas_Neue({
+  variable: "--font-bebas",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400"],
 });
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
 });
 
 export const viewport: Viewport = {
@@ -29,8 +28,8 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
   openGraph: {
     type: "website",
-    locale: "en_US",
-    url: "https://premium-landing.vercel.app",
+    locale: "es_DO",
+    url: "https://gigi-cosme.vercel.app",
     title: "Gigi Style Lashes",
     description: "Realza tu mirada con las mejores extensiones de pestañas y tratamientos.",
     siteName: "Gigi Style Lashes",
@@ -48,8 +47,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} ${playfair.variable} scroll-smooth`}>
-      <body className="bg-background text-foreground selection:bg-brand-light selection:text-brand-charcoal">
+    <html lang="es" className={`${bebasNeue.variable} ${outfit.variable} scroll-smooth`}>
+      <body className="bg-brand-light text-neutral-900 font-outfit antialiased selection:bg-brand-pink/30 selection:text-brand-deep-pink">
         <PWARegistration />
         {children}
       </body>

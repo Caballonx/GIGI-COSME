@@ -1,57 +1,46 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-pink: #c26a8d;
-  --color-brand-light: #E6D5C9;
-  --color-brand-dusty: #C89F9C;
-  --color-brand-charcoal: #2A2826;
-  --color-brand-muted: #7A7571;
+  --color-brand-pink: #fce4ec;
+  --color-brand-deep-pink: #f06292;
+  --color-brand-light: #FAF9F6;
+  --color-brand-accent: #b2dfdb;
   
   --color-background: #FAF9F6;
   --color-foreground: #2A2826;
   
   --color-glass: rgba(255, 255, 255, 0.7);
   
-  --font-playfair: "Playfair Display", serif;
-  --font-poppins: "Poppins", sans-serif;
+  --font-bebas: var(--font-bebas);
+  --font-outfit: var(--font-outfit);
 }
 
 :root {
   --background: #FAF9F6;
   --foreground: #2A2826;
-  --primary: #C89F9C;
-  --secondary: #E6D5C9;
+  --primary: #f06292;
+  --secondary: #FAF9F6;
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: var(--font-poppins);
+  font-family: var(--font-outfit), sans-serif;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
 
-@layer base {
-  body {
-    @apply bg-brand-light text-neutral-900 font-outfit antialiased;
-  }
-}
-
 @layer components {
   .glass-card {
-    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-sm rounded-2xl;
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-sm rounded-3xl;
   }
   
-  .premium-glow {
-    @apply shadow-[0_0_20px_rgba(240,98,146,0.1)];
+  .text-glow {
+    text-shadow: 0 0 20px rgba(240, 98, 146, 0.3);
   }
 
   .beauty-gradient {
     @apply bg-gradient-to-br from-brand-pink via-white to-brand-accent/20;
-  }
-  
-  .section-title {
-    @apply text-5xl md:text-7xl font-bebas tracking-tight uppercase leading-none;
   }
 }
 
@@ -66,12 +55,12 @@ body {
   animation: float 6s ease-in-out infinite;
 }
 
-/* Scrollbar */
+/* Custom Scrollbar for a premium look */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
   background: #f06292;
@@ -79,4 +68,15 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #d81b60;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #fce4ec;
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #f06292;
 }
