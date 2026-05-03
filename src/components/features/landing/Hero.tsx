@@ -41,10 +41,22 @@ export const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" className="text-lg px-8 py-6">
-              AGENDAR CITA
+            <Button 
+              size="lg" 
+              className="text-lg px-8 py-6 font-bebas tracking-widest"
+              onClick={() => window.open('https://wa.me/18297748007', '_blank')}
+            >
+              RESERVAR AHORA
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-6">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="text-lg px-8 py-6 font-bebas tracking-widest"
+              onClick={() => {
+                const el = document.getElementById('precios');
+                el?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               VER SERVICIOS
             </Button>
           </div>
