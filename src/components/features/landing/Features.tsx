@@ -54,7 +54,7 @@ export const Features = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               whileHover={{ y: -10 }}
-              className="bg-background p-8 rounded-none elegant-shadow group relative overflow-hidden border border-transparent hover:border-brand-dusty/20 transition-all duration-300"
+              className="bg-background p-8 rounded-none elegant-shadow group relative overflow-hidden border border-brand-dusty/10 hover:border-brand-dusty/30 transition-all duration-300"
             >
               <div className="mb-6 text-brand-dusty transition-transform duration-500 group-hover:scale-110">
                 {f.icon}
