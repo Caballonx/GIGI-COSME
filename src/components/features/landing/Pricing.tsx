@@ -9,6 +9,7 @@ const plans = [
   {
     name: "Pestañas",
     price: "RD$1,200",
+    image: "/images/lashes.png",
     features: [
       "Pelo a pelo clásica",
       "Efecto Rímel",
@@ -22,25 +23,27 @@ const plans = [
   {
     name: "Cejas",
     price: "RD$500",
+    image: "/images/brows.png",
     features: [
       "Diseño y perfilado",
-      "Depilación con cera",
       "Laminado de cejas",
       "Tintado con Henna",
+      "Depilación con cera",
       "Asesoría de visagismo"
     ],
     popular: false,
     buttonText: "RESERVAR AHORA"
   },
   {
-    name: "Combos",
-    price: "RD$2,500",
+    name: "Depilación",
+    price: "RD$300",
+    image: "/images/waxing.png",
     features: [
-      "Pestañas + Cejas Pro",
-      "Limpieza Facial Express",
-      "Descuento por fidelidad",
-      "Atención preferencial",
-      "Seguimiento post-servicio"
+      "Bozzo facial",
+      "Axilas suaves",
+      "Piernas completas",
+      "Cera de baja temperatura",
+      "Cuidado post-depilatorio"
     ],
     popular: false,
     buttonText: "RESERVAR AHORA"
@@ -79,12 +82,22 @@ export const Pricing = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className={`p-10 rounded-[50px] flex flex-col transition-all duration-500 ${
+              className={`rounded-[50px] flex flex-col transition-all duration-500 overflow-hidden ${
                 plan.popular 
-                  ? 'bg-neutral-900 text-white scale-105 z-10 shadow-2xl shadow-neutral-900/20' 
-                  : 'bg-brand-light border border-brand-pink/20 hover:border-brand-deep-pink/30 hover:bg-white'
+                   ? 'bg-neutral-900 text-white scale-105 z-10 shadow-2xl shadow-neutral-900/20' 
+                   : 'bg-brand-light border border-brand-pink/20 hover:border-brand-deep-pink/30 hover:bg-white'
               }`}
             >
+              <div className="relative h-64 overflow-hidden">
+                <img 
+                  src={plan.image} 
+                  alt={plan.name} 
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                />
+                <div className={`absolute inset-0 bg-gradient-to-t ${plan.popular ? 'from-neutral-900' : 'from-brand-light'} to-transparent opacity-60`} />
+              </div>
+
+              <div className="p-10 pt-6 flex flex-col flex-grow">
               <div className="mb-8">
                 {plan.popular && (
                   <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-brand-deep-pink text-white text-[10px] font-bold uppercase tracking-widest rounded-full mb-6">
@@ -122,6 +135,7 @@ export const Pricing = () => {
               >
                 {plan.buttonText}
               </Button>
+              </div>
             </motion.div>
           ))}
         </div>

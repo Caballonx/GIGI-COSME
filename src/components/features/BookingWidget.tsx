@@ -45,7 +45,11 @@ export function BookingWidget() {
           fetch("/api/specialists").then(res => res.json())
         ])
         setServices(Array.isArray(servicesRes) ? servicesRes : [])
-        setSpecialists(Array.isArray(specialistsRes) ? specialistsRes : [])
+        const specialistData = Array.isArray(specialistsRes) ? specialistsRes : []
+        setSpecialists(specialistData)
+        if (specialistData.length > 0) {
+          setSelectedSpecialist(specialistData[0])
+        }
       } catch (err) {
         console.error("Error fetching data:", err)
         setError("Error cargando los datos. Por favor recarga la página.")
@@ -78,8 +82,20 @@ export function BookingWidget() {
     }
   }, [selectedService, selectedSpecialist, selectedDate])
 
-  const handleNext = () => setStep(s => Math.min(s + 1, 5) as Step)
-  const handlePrev = () => setStep(s => Math.max(s - 1, 1) as Step)
+  const handleNext = () => {
+    if (step === 1) {
+      setStep(3) // Skip step 2 (specialist)
+    } else {
+      setStep(s => Math.min(s + 1, 5) as Step)
+    }
+  }
+  const handlePrev = () => {
+    if (step === 3) {
+      setStep(1) // Go back to step 1 from step 3
+    } else {
+      setStep(s => Math.max(s - 1, 1) as Step)
+    }
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -135,7 +151,6 @@ export function BookingWidget() {
           <div className="space-y-10">
             {[
               { num: 1, label: "Servicio", active: step >= 1, done: step > 1, icon: Sparkles },
-              { num: 2, label: "Especialista", active: step >= 2, done: step > 2, icon: User },
               { num: 3, label: "Horario", active: step >= 3, done: step > 3, icon: Clock },
               { num: 4, label: "Tus Datos", active: step >= 4, done: step > 4, icon: Heart },
             ].map((s) => (
@@ -261,60 +276,6 @@ export function BookingWidget() {
               </motion.div>
             )}
 
-            {/* STEP 2: Especialistas */}
-            {step === 2 && (
-              <motion.div 
-                key="step2"
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                className="space-y-8"
-              >
-                <div>
-                  <h3 className="text-5xl font-bebas tracking-tight text-neutral-900 mb-2">TU <span className="text-brand-deep-pink">ESPECIALISTA</span></h3>
-                  <p className="text-neutral-400 font-outfit">Confía en las mejores manos de Santo Domingo</p>
-                </div>
-
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
-                  {specialists.map(person => (
-                    <div 
-                      key={person.id}
-                      onClick={() => setSelectedSpecialist(person)}
-                      className={`group p-6 rounded-[40px] border-2 transition-all duration-500 cursor-pointer text-center relative overflow-hidden ${
-                        selectedSpecialist?.id === person.id 
-                          ? 'border-brand-deep-pink bg-brand-pink/5 shadow-xl shadow-brand-pink/10' 
-                          : 'border-neutral-50 hover:border-brand-pink/30 bg-neutral-50/50 hover:bg-white'
-                      }`}
-                    >
-                      <div className="relative w-24 h-24 mx-auto mb-6 rounded-[30px] overflow-hidden border-4 border-white shadow-lg group-hover:rotate-3 transition-transform duration-500">
-                        {person.photoUrl ? (
-                          <img src={person.photoUrl} alt={person.name} className="w-full h-full object-cover" />
-                        ) : (
-                          <div className="w-full h-full bg-brand-pink/20 flex items-center justify-center">
-                            <User className="text-brand-deep-pink" size={32} />
-                          </div>
-                        )}
-                      </div>
-                      <h4 className="font-bebas text-2xl text-neutral-900 mb-1 tracking-wide">{person.name}</h4>
-                      <p className="text-[10px] text-brand-deep-pink font-bold uppercase tracking-[0.2em]">{person.specialty}</p>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="flex justify-between pt-16">
-                  <Button variant="ghost" onClick={handlePrev} className="rounded-full text-neutral-400 font-bebas tracking-widest text-lg px-8">
-                    <ChevronLeft className="mr-2" /> VOLVER
-                  </Button>
-                  <Button 
-                    disabled={!selectedSpecialist}
-                    onClick={handleNext}
-                    className="rounded-full px-12 h-16 bg-neutral-900 hover:bg-neutral-800 text-white font-bebas tracking-[0.2em] text-xl group shadow-xl shadow-neutral-900/10"
-                  >
-                    CONTINUAR <ChevronRight className="ml-3 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </div>
-              </motion.div>
-            )}
 
             {/* STEP 3: Fecha y Hora */}
             {step === 3 && (
