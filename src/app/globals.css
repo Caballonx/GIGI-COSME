@@ -2,18 +2,25 @@
 
 @theme {
   --color-brand-pink: #c26a8d;
-  --color-brand-light: #f8d7e3;
-  --color-dark-bg: #0a0a0a;
-  --color-glass: rgba(255, 255, 255, 0.05);
-  --font-bebas: "Bebas Neue", sans-serif;
+  --color-brand-light: #E6D5C9;
+  --color-brand-dusty: #C89F9C;
+  --color-brand-charcoal: #2A2826;
+  --color-brand-muted: #7A7571;
+  
+  --color-background: #FAF9F6;
+  --color-foreground: #2A2826;
+  
+  --color-glass: rgba(255, 255, 255, 0.7);
+  
+  --font-playfair: "Playfair Display", serif;
   --font-poppins: "Poppins", sans-serif;
 }
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #ffffff;
-  --primary: #c26a8d;
-  --secondary: #f8d7e3;
+  --background: #FAF9F6;
+  --foreground: #2A2826;
+  --primary: #C89F9C;
+  --secondary: #E6D5C9;
 }
 
 body {
