@@ -6,6 +6,19 @@
   --color-brand-light: #FAF9F6;
   --color-brand-accent: #b2dfdb;
   
+  --color-primary: #f06292;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #FAF9F6;
+  --color-secondary-foreground: #2A2826;
+  --color-accent: #f1f5f9;
+  --color-accent-foreground: #0f172a;
+  --color-muted: #f1f5f9;
+  --color-muted-foreground: #64748b;
+  --color-border: #e2e8f0;
+  --color-input: #e2e8f0;
+  --color-card: #ffffff;
+  --color-card-foreground: #2A2826;
+  
   --color-background: #FAF9F6;
   --color-foreground: #2A2826;
   

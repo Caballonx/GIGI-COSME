@@ -10,6 +10,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary: "bg-brand-pink text-white hover:bg-brand-pink/90 neon-glow",
+        default: "bg-brand-pink text-white hover:bg-brand-pink/90 neon-glow",
         secondary: "bg-brand-light text-brand-pink hover:bg-brand-light/90 magenta-glow",
         outline: "border-2 border-white/20 bg-transparent hover:bg-white/10",
         ghost: "bg-transparent hover:bg-white/5",
