@@ -5,6 +5,7 @@ import { Hero } from "@/components/features/landing/Hero";
 import { Features } from "@/components/features/landing/Features";
 import { Testimonials } from "@/components/features/landing/Testimonials";
 import { Pricing } from "@/components/features/landing/Pricing";
+import { BookingSection } from "@/components/features/landing/BookingSection";
 import { CTA } from "@/components/features/landing/CTA";
 import { Footer } from "@/components/features/landing/Footer";
 
@@ -17,6 +18,7 @@ export default function Home() {
         <Features />
         <Testimonials />
         <Pricing />
+        <BookingSection />
         <CTA />
       </main>
       <Footer />
