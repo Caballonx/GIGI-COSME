@@ -1,17 +1,35 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-pink: #c26a8d;
-  --color-brand-light: #E6D5C9;
+  --color-brand-pink: #fce4ec;
+  --color-brand-deep-pink: #f06292;
+  --color-brand-light: #FAF9F6;
+  --color-brand-accent: #b2dfdb;
   --color-brand-dusty: #C89F9C;
   --color-brand-charcoal: #2A2826;
   --color-brand-muted: #7A7571;
+  
+  --color-primary: #f06292;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #FAF9F6;
+  --color-secondary-foreground: #2A2826;
+  --color-accent: #f1f5f9;
+  --color-accent-foreground: #0f172a;
+  --color-muted: #f1f5f9;
+  --color-muted-foreground: #64748b;
+  --color-border: #e2e8f0;
+  --color-input: #e2e8f0;
+  --color-card: #ffffff;
+  --color-card-foreground: #2A2826;
   
   --color-background: #F3EAE3;
   --color-foreground: #2A2826;
   
   --color-glass: rgba(255, 255, 255, 0.7);
   
+  /* Tailwind v4 font mappings */
+  --font-bebas: var(--font-bebas), sans-serif;
+  --font-outfit: var(--font-outfit), sans-serif;
   --font-playfair: "Playfair Display", serif;
   --font-poppins: "Poppins", sans-serif;
 }
@@ -19,22 +37,33 @@
 :root {
   --background: #F3EAE3;
   --foreground: #2A2826;
-  --primary: #C89F9C;
-  --secondary: #E6D5C9;
+  --primary: #f06292;
+  --secondary: #FAF9F6;
+  
+  /* Fallbacks for component variables */
+  --card: #ffffff;
+  --card-foreground: #2A2826;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --accent: #f1f5f9;
+  --accent-foreground: #0f172a;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #f06292;
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: var(--font-poppins);
+  font-family: var(--font-poppins), sans-serif;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
 
 @layer base {
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-playfair);
-    letter-spacing: 0.02em;
+  body {
+    /* Using the variable directly to avoid Tailwind v4 JIT mapping issues during build if it's finicky */
+    font-family: var(--font-poppins), sans-serif;
   }
 }
 
@@ -53,18 +82,55 @@ body {
   .soft-shadow {
     box-shadow: 0 10px 30px rgba(200, 159, 156, 0.1);
   }
+}
 
-  .text-gradient {
-    background: linear-gradient(to right, #C89F9C, #B0827F);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+@layer components {
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-sm rounded-3xl;
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 20px rgba(240, 98, 146, 0.3);
+  }
+
+  .beauty-gradient {
+    @apply bg-gradient-to-br from-brand-pink via-white to-brand-accent/20;
   }
 }
 
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
+/* Custom Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
 }
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Custom Scrollbar for a premium look */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #f06292;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d81b60;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #fce4ec;
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #f06292;
 }
