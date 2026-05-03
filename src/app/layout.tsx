@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Poppins, Bebas_Neue } from "next/font/google";
+import { Poppins, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { PWARegistration } from "@/components/features/landing/PWARegistration";
 
@@ -9,14 +9,14 @@ const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-const bebasNeue = Bebas_Neue({
-  variable: "--font-bebas",
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const viewport: Viewport = {
-  themeColor: "#0a0a0a",
+  themeColor: "#FAF9F6",
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,
@@ -31,14 +31,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://premium-landing.vercel.app",
-    title: "Premium Experience | Modern Landing Page",
-    description: "High-performance modern landing page",
-    siteName: "Premium Landing",
+    title: "Gigi Style Lashes",
+    description: "Realza tu mirada con las mejores extensiones de pestañas y tratamientos.",
+    siteName: "Gigi Style Lashes",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Premium Experience",
-    description: "High-performance modern landing page",
+    title: "Gigi Style Lashes",
+    description: "Realza tu mirada con las mejores extensiones de pestañas.",
   },
 };
 
@@ -48,8 +48,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} ${bebasNeue.variable} scroll-smooth`}>
-      <body className="bg-dark-bg text-white selection:bg-neon-yellow selection:text-black">
+    <html lang="en" className={`${poppins.variable} ${playfair.variable} scroll-smooth`}>
+      <body className="bg-background text-foreground selection:bg-brand-light selection:text-brand-charcoal">
         <PWARegistration />
         {children}
       </body>

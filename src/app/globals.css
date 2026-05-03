@@ -2,18 +2,25 @@
 
 @theme {
   --color-brand-pink: #c26a8d;
-  --color-brand-light: #f8d7e3;
-  --color-dark-bg: #0a0a0a;
-  --color-glass: rgba(255, 255, 255, 0.05);
-  --font-bebas: "Bebas Neue", sans-serif;
+  --color-brand-light: #E6D5C9;
+  --color-brand-dusty: #C89F9C;
+  --color-brand-charcoal: #2A2826;
+  --color-brand-muted: #7A7571;
+  
+  --color-background: #FAF9F6;
+  --color-foreground: #2A2826;
+  
+  --color-glass: rgba(255, 255, 255, 0.7);
+  
+  --font-playfair: "Playfair Display", serif;
   --font-poppins: "Poppins", sans-serif;
 }
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #ffffff;
-  --primary: #c26a8d;
-  --secondary: #f8d7e3;
+  --background: #FAF9F6;
+  --foreground: #2A2826;
+  --primary: #C89F9C;
+  --secondary: #E6D5C9;
 }
 
 body {
@@ -26,29 +33,29 @@ body {
 
 @layer base {
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-bebas);
-    letter-spacing: 0.05em;
+    font-family: var(--font-playfair);
+    letter-spacing: 0.02em;
   }
 }
 
 @layer utilities {
   .glass {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(250, 249, 246, 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.6);
   }
   
-  .neon-glow {
-    box-shadow: 0 0 15px rgba(194, 106, 141, 0.5);
+  .elegant-shadow {
+    box-shadow: 0 4px 20px rgba(42, 40, 38, 0.04);
   }
   
-  .magenta-glow {
-    box-shadow: 0 0 15px rgba(248, 215, 227, 0.3);
+  .soft-shadow {
+    box-shadow: 0 10px 30px rgba(200, 159, 156, 0.1);
   }
 
   .text-gradient {
-    background: linear-gradient(to right, #c26a8d, #f8d7e3);
+    background: linear-gradient(to right, #C89F9C, #B0827F);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }

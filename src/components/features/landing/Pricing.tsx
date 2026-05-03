@@ -17,7 +17,7 @@ const plans = [
       "Retoque a las 2 semanas"
     ],
     popular: true,
-    buttonText: "ELEGIR PESTAÑAS"
+    buttonText: "Elegir Pestañas"
   },
   {
     name: "Cejas",
@@ -30,7 +30,7 @@ const plans = [
       "Asesoría de visagismo"
     ],
     popular: false,
-    buttonText: "ELEGIR CEJAS"
+    buttonText: "Elegir Cejas"
   },
   {
     name: "Combos",
@@ -43,17 +43,19 @@ const plans = [
       "Seguimiento post-servicio"
     ],
     popular: false,
-    buttonText: "VER COMBOS"
+    buttonText: "Ver Combos"
   }
 ];
 
 export const Pricing = () => {
   return (
-    <section id="precios" className="py-24 bg-black/50">
+    <section id="precios" className="py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-6xl font-bebas mb-4">MENÚ DE <span className="text-brand-pink">SERVICIOS</span></h2>
-          <div className="w-20 h-1 bg-brand-light mx-auto" />
+          <h2 className="text-4xl md:text-5xl font-playfair mb-4 text-brand-charcoal">
+            Menú de <span className="italic text-brand-dusty">Servicios</span>
+          </h2>
+          <div className="w-16 h-[1px] bg-brand-dusty mx-auto mt-6" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -64,29 +66,29 @@ export const Pricing = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className={`p-10 rounded-sm flex flex-col backdrop-blur-sm ${
+              className={`p-10 rounded-none flex flex-col ${
                 plan.popular 
-                  ? 'bg-brand-pink/10 border-2 border-brand-pink relative scale-105 z-10' 
-                  : 'border border-white/10'
+                  ? 'bg-background border border-brand-dusty/40 relative scale-105 z-10 elegant-shadow' 
+                  : 'bg-white border border-transparent hover:border-brand-dusty/20 transition-colors'
               }`}
             >
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-pink text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-full shadow-lg shadow-brand-pink/50">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-dusty text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-none shadow-sm">
                   RECOMENDADO
                 </div>
               )}
               
-              <h3 className="text-3xl font-bebas mb-2 tracking-wider">{plan.name}</h3>
+              <h3 className="text-2xl font-playfair mb-2 text-brand-charcoal">{plan.name}</h3>
               <div className="flex items-baseline mb-8">
-                <span className="text-3xl font-bebas text-brand-light">
+                <span className="text-2xl font-playfair font-semibold text-brand-dusty">
                   {plan.price}
                 </span>
               </div>
 
               <div className="flex-grow space-y-4 mb-10">
                 {plan.features.map(f => (
-                  <div key={f} className="flex items-center space-x-3 text-sm text-white/70 font-poppins">
-                    <Check size={16} className="text-brand-pink" />
+                  <div key={f} className="flex items-center space-x-3 text-sm text-brand-muted font-poppins font-light">
+                    <Check size={16} className="text-brand-dusty" />
                     <span>{f}</span>
                   </div>
                 ))}
@@ -94,7 +96,11 @@ export const Pricing = () => {
 
               <Button 
                 variant={plan.popular ? 'primary' : 'outline'} 
-                className="w-full font-bebas tracking-widest py-6"
+                className={`w-full font-poppins uppercase tracking-widest py-6 rounded-none ${
+                  plan.popular 
+                    ? 'bg-brand-dusty hover:bg-brand-pink text-white border-transparent' 
+                    : 'text-brand-charcoal border-brand-charcoal hover:bg-brand-charcoal hover:text-white'
+                }`}
                 onClick={() => window.open('https://wa.me/18297748007', '_blank')}
               >
                 {plan.buttonText}

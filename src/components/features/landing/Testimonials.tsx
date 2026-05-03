@@ -27,16 +27,16 @@ const testimonials = [
 
 export const Testimonials = () => {
   return (
-    <section id="testimonios" className="py-24 bg-white/[0.02]">
+    <section id="testimonios" className="py-24 bg-background">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl">
-            <h2 className="text-4xl md:text-6xl font-bebas leading-none">
-              LO QUE DICEN <br />
-              <span className="text-brand-pink">NUESTRAS CLIENTAS</span>
+            <h2 className="text-4xl md:text-5xl font-playfair leading-tight text-brand-charcoal">
+              Lo que dicen <br />
+              <span className="italic text-brand-dusty">nuestras clientas</span>
             </h2>
           </div>
-          <p className="text-white/40 uppercase tracking-[0.2em] text-xs font-semibold">
+          <p className="text-brand-muted uppercase tracking-[0.2em] text-xs font-semibold">
             Testimonios reales de belleza real
           </p>
         </div>
@@ -49,19 +49,19 @@ export const Testimonials = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="relative p-8 border border-white/10 rounded-3xl hover:border-brand-pink/50 transition-colors bg-white/[0.03] backdrop-blur-sm"
+              className="relative p-8 border border-transparent rounded-none hover:border-brand-dusty/30 transition-all bg-white elegant-shadow"
             >
-              <Quote className="text-brand-pink/20 absolute top-6 right-8" size={40} />
-              <p className="text-lg italic mb-8 relative z-10 text-white/80 font-poppins">
+              <Quote className="text-brand-dusty/20 absolute top-6 right-8" size={40} />
+              <p className="text-lg italic mb-8 relative z-10 text-brand-muted font-playfair leading-relaxed">
                 "{t.text}"
               </p>
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-brand-pink to-brand-light rounded-full flex items-center justify-center font-bold text-white text-sm">
+                <div className="w-12 h-12 bg-gradient-to-br from-brand-dusty to-brand-light rounded-full flex items-center justify-center font-playfair font-semibold text-white text-sm">
                   {t.avatar}
                 </div>
                 <div>
-                  <h4 className="font-bebas text-xl tracking-wide">{t.name}</h4>
-                  <p className="text-xs text-white/40 uppercase tracking-widest">{t.role}</p>
+                  <h4 className="font-playfair font-semibold text-xl tracking-wide text-brand-charcoal">{t.name}</h4>
+                  <p className="text-xs text-brand-muted uppercase tracking-widest">{t.role}</p>
                 </div>
               </div>
             </motion.div>

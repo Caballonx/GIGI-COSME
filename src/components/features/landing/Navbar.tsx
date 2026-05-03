@@ -27,17 +27,17 @@ export const Navbar = () => {
   return (
     <nav 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        isScrolled ? 'py-4 glass' : 'py-6 bg-transparent'
+        isScrolled ? 'py-4 glass elegant-shadow' : 'py-6 bg-transparent'
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <motion.div 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="text-2xl font-bebas tracking-tighter"
+          className="text-2xl font-playfair font-semibold tracking-wide"
         >
-          <span className="text-brand-pink">GIGI</span>
-          <span className="text-brand-light">STYLE</span>
+          <span className="text-brand-charcoal">GIGI</span>
+          <span className="text-brand-dusty italic ml-1">Style</span>
         </motion.div>
 
         {/* Desktop Links */}
@@ -49,19 +49,19 @@ export const Navbar = () => {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className="text-sm uppercase tracking-widest hover:text-brand-pink transition-colors"
+              className="text-sm uppercase tracking-widest text-brand-muted hover:text-brand-dusty transition-colors"
             >
               {link.name}
             </motion.a>
           ))}
-          <Button variant="primary" size="sm" className="ml-4">
-            Get Started
+          <Button variant="primary" size="sm" className="ml-4 bg-brand-dusty hover:bg-brand-pink text-white rounded-none tracking-widest uppercase">
+            Reservar Cita
           </Button>
         </div>
 
         {/* Mobile Toggle */}
         <button 
-          className="md:hidden text-white"
+          className="md:hidden text-brand-charcoal"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -75,7 +75,7 @@ export const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-black/95 backdrop-blur-xl border-b border-white/10"
+            className="md:hidden bg-background/95 backdrop-blur-xl border-b border-brand-dusty/20"
           >
             <div className="flex flex-col space-y-6 p-8">
               {navLinks.map((link) => (
@@ -83,13 +83,13 @@ export const Navbar = () => {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-xl font-bebas tracking-widest hover:text-neon-yellow"
+                  className="text-xl font-playfair tracking-wide text-brand-charcoal hover:text-brand-dusty"
                 >
                   {link.name}
                 </a>
               ))}
-              <Button variant="primary" size="lg" className="w-full">
-                Get Started
+              <Button variant="primary" size="lg" className="w-full bg-brand-dusty hover:bg-brand-pink text-white rounded-none">
+                Reservar Cita
               </Button>
             </div>
           </motion.div>
@@ -98,3 +98,4 @@ export const Navbar = () => {
     </nav>
   )
 }
+
