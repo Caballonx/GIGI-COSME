@@ -1,43 +1,41 @@
-"use client"
-
-import React from 'react'
-import { motion } from 'framer-motion'
-import { Quote } from 'lucide-react'
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    name: "Alex Rivera",
-    role: "Lead Developer",
-    text: "The performance and aesthetics of this landing page are simply unmatched. It's the new standard.",
-    avatar: "AR"
+    name: "María Rodríguez",
+    role: "Cliente Frecuente",
+    text: "Las mejores pestañas de Santo Domingo. La atención es impecable y el resultado siempre supera mis expectativas.",
+    avatar: "MR"
   },
   {
-    name: "Sarah Chen",
-    role: "UX Designer",
-    text: "Clean, bold, and incredibly intuitive. The animations are smooth and purposeful.",
-    avatar: "SC"
+    name: "Laura Jiménez",
+    role: "Maquillista Profesional",
+    text: "Gigi tiene una mano increíble para las cejas. El laminado me cambió el rostro por completo. ¡Súper recomendada!",
+    avatar: "LJ"
   },
   {
-    name: "Marcus Thorne",
-    role: "CEO, TechFlow",
-    text: "Converted more leads in the first week than our old site did in a month. Pure magic.",
-    avatar: "MT"
+    name: "Ana Sofía",
+    role: "Modelo",
+    text: "Confío plenamente en Gigi para el cuidado de mi mirada. Sus extensiones se sienten ligeras y se ven muy naturales.",
+    avatar: "AS"
   }
-]
+];
 
-export const Testimonials = () => {
+const Testimonials = () => {
   return (
-    <section id="testimonials" className="py-24 bg-white/[0.02]">
+    <section id="testimonios" className="py-24 bg-white/[0.02]">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl">
             <h2 className="text-4xl md:text-6xl font-bebas leading-none">
-              TRUSTED BY THE <br />
-              <span className="text-magenta">VISIONARIES</span>
+              LO QUE DICEN <br />
+              <span className="text-brand-pink">NUESTRAS CLIENTAS</span>
             </h2>
           </div>
           <p className="text-white/40 uppercase tracking-[0.2em] text-xs font-semibold">
-            Real feedback from real experts
+            Testimonios reales de belleza real
           </p>
         </div>
 
@@ -49,14 +47,14 @@ export const Testimonials = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="relative p-8 border border-white/10 rounded-sm hover:border-neon-yellow/50 transition-colors"
+              className="relative p-8 border border-white/10 rounded-3xl hover:border-brand-pink/50 transition-colors bg-white/[0.03] backdrop-blur-sm"
             >
-              <Quote className="text-neon-yellow/20 absolute top-6 right-8" size={40} />
-              <p className="text-lg italic mb-8 relative z-10 text-white/80">
+              <Quote className="text-brand-pink/20 absolute top-6 right-8" size={40} />
+              <p className="text-lg italic mb-8 relative z-10 text-white/80 font-poppins">
                 "{t.text}"
               </p>
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-neon-yellow to-magenta rounded-full flex items-center justify-center font-bold text-black text-sm">
+                <div className="w-12 h-12 bg-gradient-to-br from-brand-pink to-brand-light rounded-full flex items-center justify-center font-bold text-white text-sm">
                   {t.avatar}
                 </div>
                 <div>
@@ -69,5 +67,7 @@ export const Testimonials = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
+
+export default Testimonials;

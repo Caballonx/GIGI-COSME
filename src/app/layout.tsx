@@ -23,8 +23,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Premium Experience | Modern Landing Page",
-  description: "A highly optimized, premium landing page built with Next.js, TypeScript, and Tailwind CSS.",
+  title: "Gigi Style Lashes | Lashista & Cosmetóloga",
+  description: "Realza tu mirada con las mejores extensiones de pestañas, diseño de cejas y tratamientos faciales en Santo Domingo.",
+  keywords: ["pestañas", "cejas", "cosmetología", "Santo Domingo", "Gigi Style Lashes", "belleza"],
   manifest: "/manifest.json",
   openGraph: {
     type: "website",

@@ -19,8 +19,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const Comp = asChild ? Slot : "button"
     
     const variants = {
-      primary: "bg-neon-yellow text-black hover:bg-neon-yellow/90 neon-glow",
-      secondary: "bg-magenta text-white hover:bg-magenta/90 magenta-glow",
+      primary: "bg-brand-pink text-white hover:bg-brand-pink/90 neon-glow",
+      secondary: "bg-brand-light text-brand-pink hover:bg-brand-light/90 magenta-glow",
       outline: "border-2 border-white/20 bg-transparent hover:bg-white/10",
       ghost: "bg-transparent hover:bg-white/5",
     }

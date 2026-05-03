@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --color-neon-yellow: #e8ff00;
-  --color-magenta: #ff3cac;
+  --color-brand-pink: #c26a8d;
+  --color-brand-light: #f8d7e3;
   --color-dark-bg: #0a0a0a;
   --color-glass: rgba(255, 255, 255, 0.05);
   --font-bebas: "Bebas Neue", sans-serif;
@@ -12,8 +12,8 @@
 :root {
   --background: #0a0a0a;
   --foreground: #ffffff;
-  --primary: #e8ff00;
-  --secondary: #ff3cac;
+  --primary: #c26a8d;
+  --secondary: #f8d7e3;
 }
 
 body {
@@ -40,15 +40,15 @@ body {
   }
   
   .neon-glow {
-    box-shadow: 0 0 15px rgba(232, 255, 0, 0.5);
+    box-shadow: 0 0 15px rgba(194, 106, 141, 0.5);
   }
   
   .magenta-glow {
-    box-shadow: 0 0 15px rgba(255, 60, 172, 0.5);
+    box-shadow: 0 0 15px rgba(248, 215, 227, 0.3);
   }
 
   .text-gradient {
-    background: linear-gradient(to right, #e8ff00, #ff3cac);
+    background: linear-gradient(to right, #c26a8d, #f8d7e3);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }

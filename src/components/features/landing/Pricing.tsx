@@ -7,32 +7,53 @@ import { Check } from 'lucide-react'
 
 const plans = [
   {
-    name: "Starter",
-    price: "0",
-    features: ["Basic Components", "Standard Support", "Community Access", "1 Project"],
-    highlight: false
+    name: "Pestañas",
+    price: "Desde RD$1,200",
+    features: [
+      "Pelo a pelo clásica",
+      "Efecto Rímel",
+      "Volumen Ruso",
+      "Lifting de pestañas",
+      "Retoque a las 2 semanas"
+    ],
+    popular: true,
+    buttonText: "ELEGIR PESTAÑAS"
   },
   {
-    name: "Pro",
-    price: "49",
-    features: ["Advanced Components", "Priority Support", "Private Slack", "Unlimited Projects"],
-    highlight: true
+    name: "Cejas",
+    price: "Desde RD$500",
+    features: [
+      "Diseño y perfilado",
+      "Depilación con cera",
+      "Laminado de cejas",
+      "Tintado con Henna",
+      "Asesoría de visagismo"
+    ],
+    popular: false,
+    buttonText: "ELEGIR CEJAS"
   },
   {
-    name: "Enterprise",
-    price: "Custom",
-    features: ["Custom Solutions", "24/7 Dedicated Support", "SLA Guarantee", "On-site Training"],
-    highlight: false
+    name: "Combos",
+    price: "Desde RD$2,500",
+    features: [
+      "Pestañas + Cejas Pro",
+      "Limpieza Facial Express",
+      "Descuento por fidelidad",
+      "Atención preferencial",
+      "Seguimiento post-servicio"
+    ],
+    popular: false,
+    buttonText: "VER COMBOS"
   }
-]
+];
 
 export const Pricing = () => {
   return (
-    <section id="pricing" className="py-24 relative overflow-hidden">
+    <section id="precios" className="py-24 bg-black/50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-6xl font-bebas mb-4">CHOOSE YOUR <span className="text-gradient">LEVEL</span></h2>
-          <p className="text-white/40 uppercase tracking-[0.2em] text-xs">Transparent pricing for every scale</p>
+          <h2 className="text-4xl md:text-6xl font-bebas mb-4">MENÚ DE <span className="text-brand-pink">SERVICIOS</span></h2>
+          <div className="w-20 h-1 bg-brand-light mx-auto" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">

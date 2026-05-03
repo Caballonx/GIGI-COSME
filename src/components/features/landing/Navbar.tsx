@@ -18,10 +18,11 @@ export const Navbar = () => {
   }, [])
 
   const navLinks = [
-    { name: 'Features', href: '#features' },
-    { name: 'Pricing', href: '#pricing' },
-    { name: 'Testimonials', href: '#testimonials' },
-  ]
+    { name: 'Inicio', href: '#' },
+    { name: 'Servicios', href: '#servicios' },
+    { name: 'Precios', href: '#precios' },
+    { name: 'Testimonios', href: '#testimonios' },
+  ];
 
   return (
     <nav 
@@ -35,8 +36,8 @@ export const Navbar = () => {
           animate={{ opacity: 1, x: 0 }}
           className="text-2xl font-bebas tracking-tighter"
         >
-          <span className="text-neon-yellow">PREMIUM</span>
-          <span className="text-magenta">CORE</span>
+          <span className="text-brand-pink">GIGI</span>
+          <span className="text-brand-light">STYLE</span>
         </motion.div>
 
         {/* Desktop Links */}
@@ -48,7 +49,7 @@ export const Navbar = () => {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className="text-sm uppercase tracking-widest hover:text-neon-yellow transition-colors"
+              className="text-sm uppercase tracking-widest hover:text-brand-pink transition-colors"
             >
               {link.name}
             </motion.a>
