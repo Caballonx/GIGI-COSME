@@ -11,8 +11,9 @@
   
   --color-glass: rgba(255, 255, 255, 0.7);
   
-  --font-bebas: var(--font-bebas);
-  --font-outfit: var(--font-outfit);
+  /* Tailwind v4 font mappings */
+  --font-bebas: var(--font-bebas), sans-serif;
+  --font-outfit: var(--font-outfit), sans-serif;
 }
 
 :root {
@@ -20,6 +21,17 @@
   --foreground: #2A2826;
   --primary: #f06292;
   --secondary: #FAF9F6;
+  
+  /* Fallbacks for component variables */
+  --card: #ffffff;
+  --card-foreground: #2A2826;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --accent: #f1f5f9;
+  --accent-foreground: #0f172a;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #f06292;
 }
 
 body {
@@ -28,6 +40,13 @@ body {
   font-family: var(--font-outfit), sans-serif;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+}
+
+@layer base {
+  body {
+    /* Using the variable directly to avoid Tailwind v4 JIT mapping issues during build if it's finicky */
+    font-family: var(--font-outfit), sans-serif;
+  }
 }
 
 @layer components {
